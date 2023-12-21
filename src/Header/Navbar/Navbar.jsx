@@ -19,8 +19,9 @@ const Navbar = () => {
             .catch(err => toast.error(err.message))
     }
     return (
-        <Container>
-            <div className="flex items-center justify-between px-3 ">
+       <div className="bg-base-300">
+       <Container>
+            <div className="flex items-center justify-between px-3">
                 <div className="navbar-start ">
                     <div className="dropdown absolute right-0 top-0">
                         <button className="p-2 text-2xl lg:hidden" onClick={() => document.getElementById('my_modal_5').showModal()}><FaBars /></button>
@@ -104,6 +105,7 @@ const Navbar = () => {
                 </div>
             </div>
         </Container>
+       </div>
     );
 };
 
