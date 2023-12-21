@@ -1,16 +1,16 @@
 import toast from "react-hot-toast";
-// import { useAuth } from "../../../hooks/useAuth";
 import {FaHome, FaSignOutAlt, FaUserPlus} from 'react-icons/fa';
-import { MdAddShoppingCart, MdDashboard, MdLogin } from "react-icons/md";
+import {  MdDashboard, MdLogin } from "react-icons/md";
 import ManuList from "../Navbar/MnauList";
+import useAuth from "../../components/hooks/useAuth";
 const Sidebar = () => {
-    // const {user,logoutUser} = useAuth()
-    // const handleLogout = () => {
-    //     logoutUser()
-    //         .then(() => {
-    //             return toast.success("logout successfully!")
-    //         })
-    // }
+    const {user,logoutUser} = useAuth()
+    const handleLogout = () => {
+        logoutUser()
+            .then(() => {
+                return toast.success("logout successfully!")
+            })
+    }
     return (
         <>
             <div className="drawer-side z-30">
@@ -20,7 +20,7 @@ const Sidebar = () => {
                     <ManuList link={"/"} title={"Home"} icon={FaHome} />
                     <ManuList link={"/"} title={"Login"} icon={MdLogin} />
                   <ManuList link={"/dashboard"} title={"Let’s Explore"} icon={MdDashboard} />
-                    {/* {
+                    {
                         user?.email ? <div className="flex gap-3 mt-5">
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button " className="btn btn-ghost btn-circle avatar ring ring-white">
@@ -45,7 +45,7 @@ const Sidebar = () => {
                                     <ManuList address={'signup'} linkTitle={"Signup"} icon={FaUserPlus} />
                                 </span>
                             </>
-                    } */}
+                    }
                 </ul>
             </div>
         </>
