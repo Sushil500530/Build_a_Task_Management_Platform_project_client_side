@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiOutlineBars3 } from "react-icons/hi2";
-import NavList from "../Header/Navbar/NavList";
 import { Outlet } from "react-router-dom";
+import DLinks from "../components/dashboard/dashboard-link/DLinks";
 
 
 const DashboardLayout = () => {
@@ -21,7 +21,13 @@ const DashboardLayout = () => {
                     </button>
                 </div>
                 <div className={`z-10 pb-6 fixed bg-blue-50 overflow-y-auto w-64 h-auto space-y-6 px-2 inset-y-0 left-0 transform lg:block ${isActive && '-translate-x-full'} lg:translate-x-0  dark:text-white dark:bg-zinc-800 transition duration-200 ease-in-out`}>
-                    <NavList link={'/hellow'} icon={HiOutlineBars3} title={"Home"}></NavList>
+                    <div className="flex items-center justify-center flex-col">
+                        <DLinks link={'/dashboard'} icon={HiOutlineBars3} title={"Home"} />
+                        <DLinks link={'/dashboard'} icon={HiOutlineBars3} title={"Home"} />
+                        <DLinks link={'/dashboard'} icon={HiOutlineBars3} title={"Home"} />
+                        <div className="divider "></div>
+                        <DLinks link={'/'} icon={HiOutlineBars3} title={"Go Home"} />
+                    </div>
                     {/* <Manubar /> */}
                 </div>
             </div>
