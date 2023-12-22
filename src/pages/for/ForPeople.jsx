@@ -44,7 +44,8 @@ const ForPeople = () => {
                                     </div>
 
                                 </div>
-                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button>
+                                <a href="https://www.coursera.org/articles/web-developer" target="_blank">
+                                    <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
                             </div>
                             <span className="-mt-2">
                                 <Rating
@@ -86,7 +87,8 @@ const ForPeople = () => {
                                     </div>
 
                                 </div>
-                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button>
+                                <a href="https://www.mastersindatascience.org/careers/data-scientist/" target="_blank">
+                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
                             </div>
                             <span className="-mt-2">
                                 <Rating
@@ -128,7 +130,8 @@ const ForPeople = () => {
                                     </div>
 
                                 </div>
-                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button>
+                                <a href="https://www.betterteam.com/web-graphic-designer-job-description" target="_blank">
+                                    <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
                             </div>
                             <span className="-mt-2">
                                 <Rating
@@ -170,7 +173,8 @@ const ForPeople = () => {
                                     </div>
 
                                 </div>
-                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button>
+                                <a href="https://www.investopedia.com/terms/i/investmentbanker.asp" target="_blank">
+                                    <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
                             </div>
                             <span className="-mt-2">
                                 <Rating
@@ -210,9 +214,9 @@ const ForPeople = () => {
                                             <span>+99</span>
                                         </div>
                                     </div>
-
                                 </div>
-                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button>
+                                <a href="https://www.dictionary.com/browse/corporator" target="_blank">
+                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
                             </div>
                             <span className="-mt-2">
                                 <Rating
@@ -254,7 +258,8 @@ const ForPeople = () => {
                                     </div>
 
                                 </div>
-                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button>
+                                <a href="http://surl.li/omzlz" target="_blank">
+                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
                             </div>
                             <span className="-mt-2">
                                 <Rating
