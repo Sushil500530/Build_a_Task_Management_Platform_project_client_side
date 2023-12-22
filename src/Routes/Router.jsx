@@ -5,6 +5,10 @@ import LoginPage from './../pages/login/LoginPage';
 import Home from "../pages/Home/Home";
 import Mainlayout from './../layouts/Mainlayout';
 import RegisterPage from "../pages/register/RegisterPage";
+import ForPeople from "../pages/for/ForPeople";
+import Dashboard from "../components/dashboard/D-pages/Dashboard";
+import CreateTask from "../components/dashboard/create task/CreateTask";
+import Profile from "../components/dashboard/profile/Profile";
 
 const Router = createBrowserRouter([
     {
@@ -30,7 +34,25 @@ const Router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element: <DashboardLayout />
+        element: <DashboardLayout />,
+        children:[
+            {
+               index:true,
+                element:<Dashboard />
+            },
+            {
+                path:'for-people',
+                element:<ForPeople />
+            },
+            {
+                path:'create-task',
+                element:<CreateTask />
+            },
+            {
+                path:'profile',
+                element:<Profile />
+            },
+        ]
     }
 ])
 export default Router;

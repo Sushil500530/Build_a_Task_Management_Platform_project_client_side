@@ -76,9 +76,9 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                        <Link to="setting">
+                                        <Link to="dashboard">
                                             <li className="w-full btn btn-sm">
-                                                Profile
+                                                Dashboard
                                             </li>
                                         </Link>
                                         <Link to='setting'>

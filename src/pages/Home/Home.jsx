@@ -1,15 +1,16 @@
 import Banner from "../../Header/banner/Banner";
+import Container from "../../components/shared/Container";
 import Counter from "../counter/Counter";
 import Footer from "../footer/Footer";
-import ForPeople from "../for/ForPeople";
 
 const Home = () => {
     return (
         <div>
             <Banner />
             <Counter />
-            <ForPeople />
-            <Footer />
+            <Container>
+                <Footer />
+            </Container>
         </div>
     );
 };
