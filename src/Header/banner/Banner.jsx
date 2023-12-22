@@ -35,37 +35,37 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <img src={banner1} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner1} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner2} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner2} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner3} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner3} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner4} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner4} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner5} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner5} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner6} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner6} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner7} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner7} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner8} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner8} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner9} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner9} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner10} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner10} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={banner11} alt="banner" className='w-full h-[70vh]' />
+                    <img src={banner11} alt="banner" className='w-full h-[50vh] lg:h-[75vh]' />
                 </SwiperSlide>
             </Swiper>
         </Container>

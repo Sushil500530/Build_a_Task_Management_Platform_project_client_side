@@ -10,7 +10,7 @@ const ManuList = () => {
                 to='/'
                 className={({ isActive }) =>
                     isActive
-                        ? "btn bg-gradient-to-r from-[#344281] hover:text-black to-[#9b04ff] text-white px-10"
+                        ? "btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10"
                         : "text-black btn bg-transparent border-none"
                 } >
                 Home
@@ -19,7 +19,7 @@ const ManuList = () => {
                 to='dashboard'
                 className={({ isActive }) =>
                     isActive
-                        ? "btn bg-gradient-to-r from-[#344281] to-[#9b04ff] hover:text-black text-white px-10"
+                        ? "btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10"
                         : "text-black btn bg-transparent border-0 outline-none"
                 } >
                 Let’s Explore
@@ -28,7 +28,7 @@ const ManuList = () => {
                 to='login'
                 className={({ isActive }) =>
                     isActive
-                        ? "btn bg-gradient-to-r from-[#344281] to-[#9b04ff] hover:text-black text-white px-10"
+                        ? "btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10"
                         : "text-black btn bg-transparent border-0 outline-none"
                 } >
                 Login

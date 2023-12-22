@@ -7,16 +7,17 @@ import { MdLogin } from "react-icons/md";
 // import { useAuth } from './../../../hooks/useAuth';
 import toast from "react-hot-toast";
 import ManuList from "./MnauList";
+import useAuth from "../../components/hooks/useAuth";
 
 
 const NavLinkManu = () => {
-    // const { user, logoutUser } = useAuth();
-    // const handleLogout = () => {
-    //     logoutUser()
-    //         .then(() => {
-    //             return toast.success("logout successfully!")
-    //         })
-    // }
+    const { user, logoutUser } = useAuth();
+    const handleLogout = () => {
+        logoutUser()
+            .then(() => {
+                return toast.success("logout successfully!")
+            })
+    }
     return (
         <>
             <div className="flex-none hidden lg:block ">

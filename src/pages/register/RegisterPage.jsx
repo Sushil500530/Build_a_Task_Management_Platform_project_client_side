@@ -90,13 +90,13 @@ const RegisterPage = () => {
     }
     return (
         <>
-            <div className="w-full h-auto lg:h-screen bg-cover bg-no-repeat object-contain text-black pb-12 ">
+            <div className="w-full h-auto lg:h-screen text-black pb-12 ">
                 <h1 className="text-black text-2xl py-8 font-bold text-center">Gaine To New Experience From Here🎉</h1>
                 <div className='container mx-auto flex flex-col lg:flex-row gap-5 items-center justify-center text-white'>
                     <div className="w-full lg:w-1/2 h-auto lg:h-[780px]">
                         <img src="https://i.ibb.co/ncZSDCN/data-1084-gambar-login-png-37.jpg" className="w-full h-full rounded-md" alt="register-photo" />
                     </div>
-                    <div className="w-full lg:w-1/2 h-auto bg-gradient-to-b from-[#344281] to-[#512a6b] border pb-5 rounded-md">
+                    <div className="w-full lg:w-1/2 h-auto bg-gradient-to-r from-blue-800 to-blue-950 border pb-5 rounded-md">
                         <form onSubmit={handleResister} className="space-y-8 p-5">
                             <h3 className="text-2xl font-semibold mb-10 mt-5 text-center">Please Resister Now</h3>
                             <label className="text-xl font-bold my-5">Name
@@ -118,7 +118,7 @@ const RegisterPage = () => {
                                 </span>
                             </div>
                             <p className='text-red-500 font-medium'>{passwordError}</p>
-                            <button className="btn bg-gradient-to-r from-[#344281] to-[#9b04ff] text-white hover:text-black text-[18px] w-full capitalize font-semibold">
+                            <button className="btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white text-[18px] w-full capitalize font-semibold">
                             {loading ? (
                            <span className='flex items-center justify-center gap-3'> <FaSpinner className='m-auto animate-spin' size={24} /> Processing....</span>
                         ) : (

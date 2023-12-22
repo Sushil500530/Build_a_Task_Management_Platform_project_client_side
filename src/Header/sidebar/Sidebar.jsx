@@ -41,7 +41,7 @@ const Sidebar = () => {
                         </div> :
                             <>
                                 <ManuList address={'login'} linkTitle={"Login"} icon={MdLogin} />
-                                <span className="bg-gradient-to-r from-[#0939e8] to-[#ff0fdb] rounded-md text-white animate-bounce hover:animate-none mt-5">
+                                <span className="hover:bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 rounded-md text-white animate-bounce hover:animate-none mt-5">
                                     <ManuList address={'signup'} linkTitle={"Signup"} icon={FaUserPlus} />
                                 </span>
                             </>

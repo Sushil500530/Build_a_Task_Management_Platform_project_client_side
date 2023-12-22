@@ -41,7 +41,7 @@ const Navbar = () => {
                                             <button className="btn bg-gradient-to-r from-[#f24810] to-[#f36913] text-white px-10 hover:text-black" onClick={handleLogout}>Logout</button>
                                         </> :
                                             <>
-                                                <button className="btn bg-gradient-to-r from-[#344281] to-[#9b04ff] text-white px-10 hover:text-black" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
+                                                <button className="btn hover:bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
                                                 <dialog id="my_modal_3" className="modal">
                                                     <div className="modal-box w-[92%] md:w-2/3 ">
                                                         <form method="dialog">
@@ -69,7 +69,7 @@ const Navbar = () => {
                         <ManuList />
                         {
                             user ? <>
-                                <div className="dropdown dropdown-end">
+                                <div className="dropdown dropdown-end z-10">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full">
                                             <img alt="profile" src={user?.photoURL} />
@@ -90,7 +90,7 @@ const Navbar = () => {
                                 <button className="btn bg-gradient-to-r from-[#f24810] to-[#f36913] text-white px-10 hover:text-black" onClick={handleLogout}>Logout</button>
                             </> :
                                 <>
-                                    <button className="btn bg-gradient-to-r from-[#344281] to-[#9b04ff] text-white px-10 hover:text-black" onClick={() => document.getElementById('my_modal_2').showModal()}>Login</button>
+                                    <button className="btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10" onClick={() => document.getElementById('my_modal_2').showModal()}>Login</button>
                                     <dialog id="my_modal_2" className="modal">
                                         <div className="modal-box w-[33%] max-w-5xl ">
                                             <form method="dialog">

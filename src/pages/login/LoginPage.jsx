@@ -69,7 +69,7 @@ const LoginPage = () => {
 
 
     return (
-        <div className=" w-full lg:w-[580px] text-white mx-auto mt-12 bg-gradient-to-b from-[#344281] to-[#512a6b] border pb-5 rounded-md">
+        <div className=" w-full lg:w-[580px] text-white mx-auto mt-12 bg-gradient-to-r from-blue-800 to-blue-950 border pb-5 rounded-md">
             <form onSubmit={handleLogin} className="p-5 border">
                 <h3 className="text-2xl font-semibold mb-10 mt-5 text-center">Please Login</h3>
                 <label className="text-xl font-bold my-5">Email
@@ -96,7 +96,7 @@ const LoginPage = () => {
                     <p className="text-blue-600 underline"><Link to="#">Forget Password</Link></p>
                 </div>
                 <p className='font-medium text-red-500'>{terms}</p>
-                <button className="btn bg-gradient-to-r from-[#344281] to-[#9b04ff] text-white my-8 hover:text-black text-[18px] w-full capitalize font-semibold">
+                <button className="btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white my-8 text-[18px] w-full capitalize font-semibold">
                     {loading ? (
                         <span className='flex items-center justify-center gap-3'> <FaSpinner className='m-auto animate-spin' size={24} /> Processing....</span>
                     ) : (
