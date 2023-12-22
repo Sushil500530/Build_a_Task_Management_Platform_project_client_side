@@ -5,6 +5,7 @@ import bangker from '../../assets/image/for/Bankers.jpg';
 import corporate from '../../assets/image/for/corporate professionals.jpg'
 import dataScience from '../../assets/image/for/data-science.jpg';
 import digital from '../../assets/image/for/digital-marketer.png';
+import education from '../../assets/image/for/education.jpg';
 
 const ForPeople = () => {
     return (
@@ -48,7 +49,7 @@ const ForPeople = () => {
                         <span className="-mt-2">
                             <Rating
                                 style={{ maxWidth: 180, height: 27, color: '#f7bd16', }}
-                                value={4.5}
+                                value={5}
                                 readOnly
                             />
                         </span>
@@ -134,7 +135,7 @@ const ForPeople = () => {
                         <span className="-mt-2">
                             <Rating
                                 style={{ maxWidth: 180, height: 27, color: '#f7bd16', }}
-                                value={4.5}
+                                value={5}
                                 readOnly
                             />
                         </span>
@@ -177,7 +178,7 @@ const ForPeople = () => {
                         <span className="-mt-2">
                             <Rating
                                 style={{ maxWidth: 180, height: 27, color: '#f7bd16', }}
-                                value={4.5}
+                                value={5}
                                 readOnly
                             />
                         </span>
@@ -262,7 +263,50 @@ const ForPeople = () => {
                         <span className="-mt-2">
                             <Rating
                                 style={{ maxWidth: 180, height: 27, color: '#f7bd16', }}
-                                value={4.5}
+                                value={5}
+                                readOnly
+                            />
+                        </span>
+                    </div>
+                </div>
+                <div className="card bg-base-100 hover:shadow-xl border  cursor-pointer">
+                    <figure className="w-full h-[300px]">
+                        <img src={education} alt="education" className="rounded-xl w-full h-full" />
+                    </figure>
+                    <div className="card-body">
+                        <h2 className="card-title">Education</h2>
+                        <p>Fundamentally, education socializes children into society by teaching cultural values and norms. It equips them with the skills needed to become productive</p>
+                        <div className="card-actions flex items-center justify-between">
+                            <div className="avatar-group -space-x-6 rtl:space-x-reverse">
+                                <div className="avatar">
+                                    <div className="w-12">
+                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                </div>
+                                <div className="avatar">
+                                    <div className="w-12">
+                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                </div>
+                                <div className="avatar">
+                                    <div className="w-12">
+                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                </div>
+                                <div className="avatar placeholder">
+                                    <div className="w-12 bg-neutral text-neutral-content">
+                                        <span>+99</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="https://www.britannica.com/topic/education" target="_blank">
+                                <button className="bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 btn text-white">Show More</button></a>
+                        </div>
+                        <span className="-mt-2">
+                            <Rating
+                                style={{ maxWidth: 180, height: 27, color: '#f7bd16', }}
+                                value={5}
                                 readOnly
                             />
                         </span>
