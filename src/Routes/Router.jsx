@@ -10,6 +10,7 @@ import Dashboard from "../components/dashboard/D-pages/Dashboard";
 import CreateTask from "../components/dashboard/create task/CreateTask";
 import Profile from "../components/dashboard/profile/Profile";
 import TaskDetails from "../pages/task/task-components/task-details/TaskDetails";
+import Favorite from "../pages/favorite/Favorite";
 
 const Router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const Router = createBrowserRouter([
             {
                 path:'login',
                 element: <LoginPage />
+            },
+            {
+                path:'favorite',
+                element: <Favorite />
             },
             {
                 path:'task-details/:id',

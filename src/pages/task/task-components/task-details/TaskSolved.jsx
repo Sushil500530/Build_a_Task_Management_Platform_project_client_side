@@ -11,7 +11,7 @@ const TaskSolved = () => {
                     <p className="text-center">
                         Effective task management involves a combination of planning, organization, prioritization, and execution. Here's a step-by-step guide to help you solve any task management challenge:
                     </p>
-                    <div className="space-y-3">
+                    <div className="space-y-3 mt-8">
                         <div className="collapse collapse-arrow bg-base-200">
                             <input type="radio" name="my-accordion-2" checked="checked" />
                             <div className="collapse-title text-xl font-medium">
