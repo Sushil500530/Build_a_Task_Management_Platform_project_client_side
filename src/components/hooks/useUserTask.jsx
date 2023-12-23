@@ -5,8 +5,9 @@ import useAxiosSecure from "./useAxiosSecure";
 const useUserTask = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
+    console.log(user);
     const { data: user_task = [], refetch, isLoading } = useQuery({
-        queryKey: ['users', user],
+        queryKey: ['user_task', user],
         queryFn: async () => {
             if (user) {
                 const res = await axiosSecure.get(`/taskData/${user?.email}`);

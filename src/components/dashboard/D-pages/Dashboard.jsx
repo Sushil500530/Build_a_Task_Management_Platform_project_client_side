@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import Footer from "../../../pages/footer/Footer";
 
 const Dashboard = () => {
-    const [user_task, refetch, isLoading] = useUserTask();
-    refetch();
+    const [user_task, , isLoading] = useUserTask();
+
     // console.log(user_task);
     if (isLoading) {
         return <Loading />
@@ -30,7 +30,7 @@ const Dashboard = () => {
                     <div className="grid grid-cols-2 gap-5 p-3">
 
                         {
-                            user_task?.map(task =>
+                            user_task?.length > 0 && user_task?.map(task =>
                                 <div key={task?._id} className=" cursor-pointer border w-full h-auto relative group border-[#7d5fff] hover:border-none group rounded-lg hover:rounded-lg overflow-hidden">
                                     <figure className="w-full h-72">
                                         <img src={task?.image} className="w-full h-full hover:scale-95 transition-all ease-in-out" alt="" />
@@ -43,6 +43,11 @@ const Dashboard = () => {
                             )
                         }
                     </div>
+                    {
+                        user_task?.length <= 0 && <div className="flex items-center justify-center text-2xl font-bold w-full h-[30vh]">
+                            <h1>Data Not Found....!</h1>
+                        </div>
+                    }
                 </div>
                 <div className="w-full h-auto text-center py-8 shadow-xl">
                     <h1 className="text-xl font-bold mb-3">Complete Tasts</h1>

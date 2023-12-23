@@ -6,8 +6,7 @@ import useFavorite from "../../components/hooks/useFavorite";
 
 
 const ManuList = () => {
-    const [favorite, refetch, ] = useFavorite();
-            refetch();
+    const [favorite, , ] = useFavorite();
     return (
         <>
             <NavLink

@@ -38,7 +38,7 @@ const TaskDetails = () => {
         <Container>
             <div className=" dark:bg-zinc-800 dark:text-white py-5">
                 <div className="flex flex-col md:flex-col lg:flex-row justify-around mt-7">
-                    <div className="w-full lg:h-auto lg:w-[50%]">
+                    <div className="w-full lg:h-auto lg:w-[50%] border">
                         <img className="h-auto w-full rounded" src={image} alt="meal-photo" />
                     </div>
                     <div className="lg:h-auto space-y-3 flex flex-col p-5 justify-center items-center lg:items-start lg:justify-start lg:flex-col lg:w-[40%]">

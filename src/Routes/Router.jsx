@@ -11,6 +11,7 @@ import CreateTask from "../components/dashboard/create task/CreateTask";
 import Profile from "../components/dashboard/profile/Profile";
 import TaskDetails from "../pages/task/task-components/task-details/TaskDetails";
 import Favorite from "../pages/favorite/Favorite";
+import PrivetRoute from "../provider/PrivetRoute";
 
 const Router = createBrowserRouter([
     {
@@ -28,12 +29,12 @@ const Router = createBrowserRouter([
             },
             {
                 path:'favorite',
-                element: <Favorite />
+                element: <PrivetRoute><Favorite /></PrivetRoute>
             },
             {
                 path:'task-details/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/task-all/${params.id}`),
-                element: <TaskDetails />
+                loader: ({params}) => fetch(`https://task-m-server-side.vercel.app/task-all/${params.id}`),
+                element: <PrivetRoute><TaskDetails /></PrivetRoute>
             },
           
         ]
@@ -44,7 +45,7 @@ const Router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element: <DashboardLayout />,
+        element: <PrivetRoute><DashboardLayout /></PrivetRoute>,
         children:[
             {
                index:true,
@@ -52,11 +53,11 @@ const Router = createBrowserRouter([
             },
             {
                 path:'for-people',
-                element:<ForPeople />
+                element:<PrivetRoute><ForPeople /></PrivetRoute>
             },
             {
                 path:'create-task',
-                element:<CreateTask />
+                element:<PrivetRoute><CreateTask /></PrivetRoute>
             },
             {
                 path:'profile',
