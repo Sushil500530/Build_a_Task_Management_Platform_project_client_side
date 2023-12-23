@@ -41,7 +41,7 @@ const Navbar = () => {
                                             <button className="btn bg-gradient-to-r from-[#f24810] to-[#f36913] text-white px-10 hover:text-black" onClick={handleLogout}>Logout</button>
                                         </> :
                                             <>
-                                                <button className="btn hover:bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
+                                                <button className="btn bg-gradient-to-r from-blue-800 to-blue-950 hover:text-green-500 text-white px-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
                                                 <dialog id="my_modal_3" className="modal">
                                                     <div className="modal-box w-[92%] md:w-2/3 ">
                                                         <form method="dialog">
@@ -81,7 +81,7 @@ const Navbar = () => {
                                                 Dashboard
                                             </li>
                                         </Link>
-                                        <Link to='setting'>
+                                        <Link to='dashboard/profile'>
                                             <li className="w-full btn btn-sm my-1">Settings</li>
                                         </Link>
                                         <li onClick={handleLogout} className="w-full btn btn-sm">Logout</li>

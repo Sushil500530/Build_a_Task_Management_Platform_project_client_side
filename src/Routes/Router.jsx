@@ -5,10 +5,11 @@ import LoginPage from './../pages/login/LoginPage';
 import Home from "../pages/Home/Home";
 import Mainlayout from './../layouts/Mainlayout';
 import RegisterPage from "../pages/register/RegisterPage";
-import ForPeople from "../pages/for/ForPeople";
+import ForPeople from "../components/dashboard/for/ForPeople";
 import Dashboard from "../components/dashboard/D-pages/Dashboard";
 import CreateTask from "../components/dashboard/create task/CreateTask";
 import Profile from "../components/dashboard/profile/Profile";
+import TaskDetails from "../pages/task/task-components/task-details/TaskDetails";
 
 const Router = createBrowserRouter([
     {
@@ -20,10 +21,14 @@ const Router = createBrowserRouter([
                 path:'/',
                 element: <Home />
             },
-           
             {
                 path:'login',
                 element: <LoginPage />
+            },
+            {
+                path:'task-details/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/task-all/${params.id}`),
+                element: <TaskDetails />
             },
           
         ]

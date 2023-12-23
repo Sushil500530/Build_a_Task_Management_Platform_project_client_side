@@ -40,7 +40,7 @@ const DashboardLayout = () => {
                     {/* <Manubar /> */}
                 </div>
             </div>
-            <div className="border bg-blue-50 flex-1 mb-12 ml-0 lg:ml-64">
+            <div className="border bg-blue-50 flex-1 ml-0 lg:ml-64">
                 <Outlet></Outlet>
             </div>
         </div>

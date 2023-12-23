@@ -23,6 +23,7 @@ const CreateTask = () => {
         const description = form.details.value;
         const startDate = form.start_date.value;
         const endDate = form.end_date.value;
+
         try {
             const loadImage = await imageUpload(image);
             const taskDoc = {
@@ -44,9 +45,10 @@ const CreateTask = () => {
                 if(res.data?.insertedId){
                     setLoading(false);
                     Swal.fire({
-                        title: "Wow🎉✨!",
+                        title: `Wow🎉✨! <br /> ${taskName}`,
                         text: "Task Added Successfully!",
-                        icon: "success"
+                        icon: "success",
+                        timer:'1000'
                       });
                     form.reset();
                 }
@@ -57,7 +59,7 @@ const CreateTask = () => {
             setLoading(false);
             toast.error(error.message)
         }
-        // console.log({ taskName, image, category, description, startDate, endDate });
+    //     console.log({ taskName, type, image, category, description, startDate, endDate });
     }
     return (
         <div>
@@ -71,7 +73,7 @@ const CreateTask = () => {
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-medium">Your Task Thumbnail*</label>
-                            <input type="file" name='thumbnail' className="file-input file-input-bordered file-input-primary w-full" required />
+                            <input type="file" name='thumbnail' className="file-input file-input-bordered file-input-primary w-full"  />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-medium">Task Category*</label>

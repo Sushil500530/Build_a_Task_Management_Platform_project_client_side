@@ -1,17 +1,17 @@
 import { Rating } from "@smastrom/react-rating";
-import developer from '../../assets/image/for/developer.png';
-import graphiscer from '../../assets/image/for/graphics-designer-.jpg';
-import bangker from '../../assets/image/for/Bankers.jpg';
-import corporate from '../../assets/image/for/corporate professionals.jpg'
-import dataScience from '../../assets/image/for/data-science.jpg';
-import digital from '../../assets/image/for/digital-marketer.png';
-import education from '../../assets/image/for/education.jpg';
+import developer from '../../../assets/image/for/developer.png';
+import graphiscer from '../../../assets/image/for/graphics-designer-.jpg';
+import bangker from '../../../assets/image/for/Bankers.jpg';
+import corporate from '../../../assets/image/for/corporate professionals.jpg'
+import dataScience from '../../../assets/image/for/data-science.jpg';
+import digital from '../../../assets/image/for/digital-marketer.png';
+import education from '../../../assets/image/for/education.jpg';
 
 const ForPeople = () => {
     return (
         <div className="my-12">
             <h1 className="text-4xl font-bold text-center">For whom is this website for?</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 gap-5 mt-8">
                 <div className="card bg-base-100 hover:shadow-xl border  cursor-pointer">
                     <figure className="w-full h-[300px]">
                         <img src={developer} alt="developer" className="rounded-xl w-full h-full" />
