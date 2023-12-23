@@ -28,7 +28,7 @@ const DashboardLayout = () => {
                         <HiOutlineBars3 className={`h-8 w-8 hover:text-blue-400 transition left-0 ${!isActive ? 'text-blue-400' : 'text-black'} `} />
                     </button>
                 </div>
-                <div className={`z-10 pb-6 fixed bg-blue-50 overflow-y-auto w-64 h-auto space-y-6 px-2 inset-y-0 left-0 transform lg:block ${isActive && '-translate-x-full'} lg:translate-x-0  dark:text-white dark:bg-zinc-800 transition duration-200 ease-in-out`}>
+                <div className={`z-10 pb-6 fixed bg-blue-50 overflow-y-auto w-64 h-auto space-y-6 px-2 inset-y-0 left-0 transform border-r-2 border-blue-800 lg:block ${isActive && '-translate-x-full'} lg:translate-x-0  dark:text-white dark:bg-zinc-800 transition duration-200 ease-in-out`}>
                     <div className="flex items-center justify-center flex-col mt-20">
                         <DLinks link={'/dashboard'} icon={MdDashboard} title={"Dashboard"} />
                         <DLinks link={'create-task'} icon={MdAddTask} title={"Create Task"} />
@@ -40,7 +40,7 @@ const DashboardLayout = () => {
                     {/* <Manubar /> */}
                 </div>
             </div>
-            <div className="border bg-blue-50 flex-1 ml-0 lg:ml-64">
+            <div className=" flex-1 ml-0 lg:ml-64">
                 <Outlet></Outlet>
             </div>
         </div>
