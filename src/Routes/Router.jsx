@@ -33,7 +33,7 @@ const Router = createBrowserRouter([
             },
             {
                 path:'task-details/:id',
-                loader: ({params}) => fetch(`https://task-m-server-side.vercel.app/task-all/${params.id}`),
+                loader: ({params}) => fetch(`http://localhost:5000/task-all/${params.id}`),
                 element: <PrivetRoute><TaskDetails /></PrivetRoute>
             },
           

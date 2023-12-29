@@ -5,6 +5,9 @@ import DLinks from "../components/dashboard/dashboard-link/DLinks";
 import { MdDashboard, MdAddTask } from 'react-icons/md';
 import { HiUserGroup } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
+
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 import useAuth from "../components/hooks/useAuth";
 
 const DashboardLayout = () => {
@@ -17,9 +20,9 @@ const DashboardLayout = () => {
     return (
         <div>
             {
-            user && <>
-                <h1 className="text-2xl font-bold text-center lg:ml-64 bg-gradient-to-r from-blue-800 to-blue-950 text-white py-2">Welcome <span className="text-fuchsia-500 capitalize">{user?.displayName}</span>🎉🎉🎉</h1>
-            </>
+                user && <>
+                    <h1 className="text-2xl font-bold text-center lg:ml-64 bg-gradient-to-r from-blue-800 to-blue-950 text-white py-2">Welcome <span className="text-fuchsia-500 capitalize">{user?.displayName}</span>🎉🎉🎉</h1>
+                </>
             }
             <div className="flex w-full min-h-auto ">
                 <div className='text-gray-800 flex justify-between items-center lg:hidden w-full h-10 '>
@@ -40,8 +43,11 @@ const DashboardLayout = () => {
                     {/* <Manubar /> */}
                 </div>
             </div>
+
             <div className=" flex-1 ml-0 lg:ml-64">
-                <Outlet></Outlet>
+                <DndProvider backend={HTML5Backend}>
+                    <Outlet></Outlet>
+                </DndProvider>
             </div>
         </div>
     );

@@ -7,11 +7,17 @@ import { imageUpload } from "../../../api/imageUpload";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { v4 as uuidv4 } from 'uuid';
+
+
 
 const CreateTask = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
     const [loading, setLoading] = useState(false);
+    const taskItems = JSON.parse(localStorage.getItem('tasks')) || [];
+    // console.log(taskItems);
+
     const handleCreateTask = async (e) => {
         setLoading(true);
         e.preventDefault();
@@ -29,6 +35,7 @@ const CreateTask = () => {
             const taskDoc = {
                 taskName,
                 image: loadImage?.data?.display_url,
+                id: uuidv4(),
                 category,
                 type,
                 description,
@@ -38,28 +45,42 @@ const CreateTask = () => {
                 taskOwnerEmail: user?.email,
                 tastOwnerPhoto: user?.photoURL
             }
-            console.log(taskDoc);
+            // console.log(taskDoc);
+            taskItems.push({ 
+                taskName,
+                image: loadImage?.data?.display_url,
+                id: uuidv4(),
+                category,
+                type,
+                description,
+                startDate,
+                endDate,
+                taskOwnerName: user?.displayName,
+                taskOwnerEmail: user?.email,
+                tastOwnerPhoto: user?.photoURL
+             })
+            localStorage.setItem('tasks', JSON.stringify(taskItems))
             axiosSecure.post('/task-products', taskDoc)
-            .then(res => {
-                console.log(res.data);
-                if(res.data?.insertedId){
-                    setLoading(false);
-                    Swal.fire({
-                        title: `Wow🎉✨! <br /> ${taskName}`,
-                        text: "Task Added Successfully!",
-                        icon: "success",
-                        timer:'1000'
-                      });
-                    form.reset();
-                }
-            })
-            .catch(error => toast.error(error.message))
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data?.insertedId) {
+                        setLoading(false);
+                        Swal.fire({
+                            title: `Wow🎉✨! <br /> ${taskName}`,
+                            text: "Task Added Successfully!",
+                            icon: "success",
+                            timer: '1000'
+                        });
+                        form.reset();
+                    }
+                })
+                .catch(error => toast.error(error.message))
         }
         catch (error) {
             setLoading(false);
             toast.error(error.message)
         }
-    //     console.log({ taskName, type, image, category, description, startDate, endDate });
+
     }
     return (
         <div>
@@ -73,7 +94,7 @@ const CreateTask = () => {
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-medium">Your Task Thumbnail*</label>
-                            <input type="file" name='thumbnail' className="file-input file-input-bordered file-input-primary w-full"  />
+                            <input type="file" name='thumbnail' className="file-input file-input-bordered file-input-primary w-full" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-medium">Task Category*</label>

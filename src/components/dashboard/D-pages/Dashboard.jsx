@@ -3,19 +3,67 @@ import Loading from "../../shared/Loading";
 import pluseImage from '../../../assets/image/Plus_symbol.png'
 import { Link } from "react-router-dom";
 import Footer from "../../../pages/footer/Footer";
+import TaskDataDef from "../TaskDataDef";
+import { useDrop } from "react-dnd";
+import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-    const [user_task, , isLoading] = useUserTask();
+    const [tasks, setTasks] = useState([]);
+    // const axiosSecure = useAxiosSecure();
+    // console.log(taskCom);/
+    const [{ isOver }, drop] = useDrop(() => ({
+        accept: 'user_task',
+        drop: (item) => addItemToSection(item.id),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }))
+    // console.log(isOver);
+    const addItemToSection = async (id) => {
+        try {
+
+            // const dtasks = tasks?.map(prev => {
+            //     if (prev.id === id) {
+            //         console.log(prev);
+            //         return prev;
+            //     }
+            // })
+            // setTasks(dtasks);
+            setTasks(prev => {
+                const dTask = prev?.map(t => {
+                    if (t.id === id) {
+                        return { ...t, status: 'ok' };
+                    }
+                })
+                console.log(dTask);
+                return dTask;
+            })
+
+        }
+        catch (error) {
+            toast.error(error.message)
+        }
+        // console.log('droped', id);
+    }
+
+    useEffect(() => {
+        setTasks(JSON.parse(localStorage.getItem('tasks')))
+    }, [])
+
+
+
+
 
     // console.log(user_task);
-    if (isLoading) {
-        return <Loading />
-    }
+    // if (isLoading) {
+    //     return <Loading />
+    // }
     return (
         <div>
             <h1 className="text-3xl font-bold text-center my-7">Task Management Dashboard</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 p-5 gap-5 w-full h-auto">
-                <div className="w-full h-auto py-8 shadow-xl">
+                <div className="w-full h-full py-8 shadow-xl">
                     <h1 className="text-xl font-bold text-center mb-3">Create New Tasts</h1>
                     <hr className="border-2 rounded-full w-1/2 mx-auto border-blue-800 mb-8" />
                     <Link to="/dashboard/create-task">
@@ -24,35 +72,36 @@ const Dashboard = () => {
                         </figure>
                     </Link>
                 </div>
-                <div className="w-full h-auto text-center py-8 shadow-xl">
+                <div className="w-full h-full text-center py-8 shadow-xl">
                     <h1 className="text-xl font-bold mb-3">Previous Tasks</h1>
                     <hr className="border-2 rounded-full w-1/2 mx-auto border-blue-800 mb-8" />
-                    <div className="grid grid-cols-2 gap-5 p-3">
-
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-3">
                         {
-                            user_task?.length > 0 && user_task?.map(task =>
-                                <div key={task?._id} className=" cursor-pointer border w-full h-auto relative group border-[#7d5fff] hover:border-none group rounded-lg hover:rounded-lg overflow-hidden">
-                                    <figure className="w-full h-72">
-                                        <img src={task?.image} className="w-full h-full hover:scale-95 transition-all ease-in-out" alt="" />
-                                    </figure>
-                                    <div className='bg-gradient-to-b from-blue-800 to-blue-950 z-10 pb-6 absolute w-full h-auto inset-y-0 flex items-center hover:opacity-90 justify-center flex-col transform lg:block translate-y-full group-hover:translate-y-0 dark:text-white dark:bg-zinc-800 transition duration-500 ease-in-out inset-0 overflow-x-hidden opacity-0 group-hover:opacity-100  rounded-lg'>
-                                        <h1 className="absolute text-xl font-bold text-center top-20 text-white">Drug to Paste Complete Tasks</h1>
-
-                                    </div>
-                                </div>
+                            tasks?.length > 0 && tasks?.map((task, idx) => <TaskDataDef key={idx} task={task} />
                             )
                         }
                     </div>
                     {
-                        user_task?.length <= 0 && <div className="flex items-center justify-center text-2xl font-bold w-full h-[30vh]">
-                            <h1>Data Not Found....!</h1>
+                        tasks?.length <= 0 && <div className="flex items-center justify-center text-2xl font-bold w-full h-[30vh]">
+                            <h1>Task Not Found....!</h1>
                         </div>
                     }
                 </div>
-                <div className="w-full h-auto text-center py-8 shadow-xl">
+                <div className="w-full h-full text-center py-8 shadow-xl">
                     <h1 className="text-xl font-bold mb-3">Complete Tasts</h1>
                     <hr className="border-2 rounded-full w-1/2 mx-auto border-blue-800 mb-8 " />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laudantium similique temporibus deserunt quia vitae provident recusandae sunt officiis optio, nemo harum doloremque saepe cumque in rerum praesentium fugit? Consequuntur.</p>
+                    <div ref={drop} className={`h-full w-full rounded-lg ${isOver ? 'bg-slate-200' : ''}`}>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-3">
+                            {/* {
+                                tasks.length > 0 && tasks?.map(task => <div key={task?.id} className=" cursor-grab border w-full h-auto relative group border-[#7d5fff] hover:border hover:border-white rounded-lg hover:rounded-lg overflow-hidden">
+                                    <figure className="w-full h-72">
+                                        <img src={task?.image} className="w-full h-full hover:scale-95 hover:rounded-lg transition-all ease-in-out" alt="photo" />
+                                    </figure>
+                                </div>)
+                            } */}
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />

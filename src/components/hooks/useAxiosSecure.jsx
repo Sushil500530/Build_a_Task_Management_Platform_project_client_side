@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-    baseURL: "https://task-m-server-side.vercel.app",
+    baseURL: "http://localhost:5000",
     withCredentials: true,
 })
 const useAxiosSecure = () => {
@@ -18,13 +18,14 @@ const useAxiosSecure = () => {
         }, error => {
             // console.log(error);
             if (error?.response?.status === 401 || error?.response?.status === 403) {
-                toast.error('cannot find your token! log out the user');
-                logoutUser()
-                    .then(() => {
-                        toast.error('cannot find your token! log out the user');
-                        return navigate('/login')
-                    })
-                    .catch(error => console.error(error))
+                return navigate('/dashboard')
+                // toast.error('cannot find your token! log out the user');
+                // logoutUser()
+                //     .then(() => {
+                //         toast.error('cannot find your token! log out the user');
+                        // return navigate('/login')
+                    // })
+                    // .catch(error => console.error(error))
             }
         })
     }, [navigate, logoutUser])
